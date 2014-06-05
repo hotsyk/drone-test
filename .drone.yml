@@ -1,0 +1,16 @@
+image: python2.7
+env:
+    - GOPATH=/var/cache/drone
+script:
+    - make bootstrap
+    - make test
+services:
+    - nginx
+deploy:
+    bash:
+        script:
+          - make deploy
+notify:
+    email:
+        recipients:
+            - gotsyk@gmail.com
