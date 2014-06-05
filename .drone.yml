@@ -5,7 +5,8 @@ script:
     - make bootstrap
     - make test
 services:
-    - nginx
+    - redis
+    - postgres
 deploy:
     bash:
         script:
